@@ -2,7 +2,7 @@ import { StyleSheet, View, TextInput, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
 
-export default function StartGameScreen() {
+export default function StartGameScreen({ onPickNumber }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const numberInputHandler = (enteredText) => {
@@ -25,7 +25,7 @@ export default function StartGameScreen() {
       return;
     }
 
-    console.log("valid number!");
+    onPickNumber(chosenNumber);
   };
 
   return (
